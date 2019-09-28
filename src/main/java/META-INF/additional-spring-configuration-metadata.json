@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "address",
+    "type": "java.lang.String",
+    "description": "An Address from which requests from the frontend should be allowed."
+  },
+  {
+    "name": "configpath",
+    "type": "java.lang.String",
+    "description": "Path to the config file containing known trains and user settings."
+  }
+]}
