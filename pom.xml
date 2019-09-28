@@ -61,16 +61,16 @@
 	
 	
 
-	<!-- <build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+				<!-- <configuration>
 					<excludeDevtools>false</excludeDevtools>
-				</configuration>
+				</configuration> -->
 			</plugin>
 		</plugins>
-	</build> -->
+	</build>
 
 </project>
