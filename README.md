@@ -3,9 +3,9 @@
 Mit der Zugsteuerung lassen sich Lego Züge, die das Powered Up System benutzen, steuern.
 Die Zugsteuerung besteht aus 2 Teilen:
 - Ein Server der sich über Bluetooth mit dem Zug verbindet und eine API zur Steuerung bereitstellt.
-- Ein Webinterface über das der Server gesteuert werden kann.
+- Ein Webinterface über das der Server gesteuert werden kann ([Link](https://github.com/JK-Delta/ZugsteuerungFrontend)).
 
-Dieses Projekt enthält den Server für die Zugsteuerung.
+Dieses Projekt enthält den Server für die Zugsteuerung. Das Webinterface befindet sich [hier](https://github.com/JK-Delta/ZugsteuerungFrontend).
 Der Server verbindet sich über Bluetooth mit dem Zug und stellt eine API zur Steuerung bereit.
 Die Zugsteuerung wurde dafür entworfen um auf einem Raspberry Pi ausgeführt zu werden.
 Die Benutzung der Zugsteuerung hat folgende Vorteile gegenüber der offiziellen App von Lego:
@@ -30,6 +30,7 @@ Im Folgenden wird erklärt, wie sich der Server über ein Terminal auf einem Ras
 
 Lade zuerst die neuste Version von der Release Seite herunter.
 ```
+wget https://github.com/JK-Delta/Zugsteuerung/releases/download/v1.0.0/Zugsteuerung-1.0.0.jar
 ```
 
 Damit der Server eine Konfigurationsdatei anlegen kann, sollte er in ein Verzeinis gelegt werden, in dem der
@@ -54,18 +55,20 @@ Damit ist die Installation abgeschlossen.
 Der Server wird mit dem folgenden Befehl gestartet:
 
 ```
-java -jar Zugsteuerung.jar --address=<Serveradresse>
+java -jar Zugsteuerung-1.0.0.jar --address=<Serveradresse>
 ```
 Der Parameter *--address* ist unbedingt erforderlich um Anfragen aus dem Frontend zuzulassen (aufgrund von 'CORS').
 Hierbei gilt, dass der übergebene Parameter dem entsprechen muss, was als Server Adresse im Webbrowser
 angegeben wird.
 
-Beispiel: Wenn das Webinterface mit *http://raspberrypi.local* aufgerufen wird, dann muss als Parameter
+Beispiel: Wenn das Webinterface mit *http://raspberrypi.local/* aufgerufen wird, dann muss als Parameter
 ```
 --address=raspberrypi.local
 ``` 
-übergeben werden (ohne *http://*).
+übergeben werden (ohne *http://* und ohne */* am Ende).
 Wird der Webserver über einen anderen Port aufgerufen, so muss dieser Port auch im Parameter übergeben werden.
+
+Neben dem Server muss auch das Webinterface installiert werden ->[hier](https://github.com/JK-Delta/ZugsteuerungFrontend).
 
 ## Lizenz
 Dieses Projekt steht unter der [Apache License 2.0](https://spdx.org/licenses/Apache-2.0.html)-Lizenz zur Verfügung.
